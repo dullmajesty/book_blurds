@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books and Blurbs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <div id="landing" class="container">
+        <img src="Books and Blurbs.png" class="logo" alt="Logo">
+        <div class="welcome-text">WELCOME, READERS</div>
+        <button class="button" onclick="showSection('login')">LogIn/SignUp</button>
+    </div>
+
+    <div id="login" class="container hidden">
+        <div class="form-box">
+            <div class="welcome-text">Log In</div>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button class="login-button">Log In</button>
+            <div class="link">
+                Don't have an account? <a href="javascript:void(0);" onclick="showSection('signup')">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="signup" class="container hidden">
+        <div class="form-box">
+            <div class="welcome-text">Sign Up</div>
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <button class="signup-button">Sign Up</button>
+            <div class="link">
+                Already have an account? <a href="javascript:void(0);" onclick="showSection('login')">Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
