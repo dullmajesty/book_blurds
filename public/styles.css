@@ -23,17 +23,16 @@ body, html {
 .logo {
     width: 150px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .welcome-text {
     font-size: 4em;
     font-weight: bold;
-    margin-bottom: 30px;
-
+    margin-bottom: 20px;
 }
 
-.button, .login-button, .signup-button {
+.button, .login-button, .signup-button, .logout-button {
     background-color: #fff;
     color: #005b9f;
     border: none;
@@ -45,7 +44,7 @@ body, html {
     margin: 10px;
 }
 
-.button:hover, .login-button:hover, .signup-button:hover {
+.button:hover, .login-button:hover, .signup-button:hover, .logout-button:hover {
     background-color: #e6e6e6;
 }
 
@@ -99,4 +98,47 @@ body, html {
 
 .link a:hover {
     text-decoration: underline;
+}
+
+/* New styles for the dashboard search bar */
+
+/* Add to your existing styles.css */
+.container {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-bar input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
 }

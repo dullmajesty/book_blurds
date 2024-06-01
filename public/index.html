@@ -17,28 +17,36 @@
     <div id="login" class="container hidden">
         <div class="form-box">
             <div class="welcome-text">Log In</div>
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
-            <button class="login-button">Log In</button>
+            <input id="login-username" type="text" placeholder="Username" required>
+            <input id="login-password" type="password" placeholder="Password" required>
+            <button class="login-button" onclick="login()">Log In</button>
             <div class="link">
                 Don't have an account? <a href="javascript:void(0);" onclick="showSection('signup')">Sign Up</a>
             </div>
         </div>
     </div>
-
+    
     <div id="signup" class="container hidden">
         <div class="form-box">
             <div class="welcome-text">Sign Up</div>
-            <input type="text" placeholder="Username" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <input type="password" placeholder="Confirm Password" required>
-            <button class="signup-button">Sign Up</button>
+            <input id="signup-username" type="text" placeholder="Username" required>
+            <input id="signup-email" type="email" placeholder="Email" required>
+            <input id="signup-password" type="password" placeholder="Password" required>
+            <input id="signup-confirm-password" type="password" placeholder="Confirm Password" required>
+            <button class="signup-button" onclick="signup()">Sign Up</button>
             <div class="link">
                 Already have an account? <a href="javascript:void(0);" onclick="showSection('login')">Log In</a>
             </div>
         </div>
     </div>
+
+    <div id="dashboard" class="container hidden">
+        <div class="dashboard-content">
+            <h1>Welcome to the Dashboard</h1>
+            <button class="logout-button" onclick="logout()">Log Out</button>
+        </div>
+    </div>
+
 
     <script src="script.js"></script>
 </body>

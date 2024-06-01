@@ -1,18 +1,23 @@
-// script.js
-
 function showSection(sectionId) {
-    document.getElementById('landing').classList.add('hidden');
-    document.getElementById('login').classList.add('hidden');
-    document.getElementById('signup').classList.add('hidden');
-    document.getElementById(sectionId).classList.remove('hidden');
+    const sections = ['landing', 'login', 'signup', 'dashboard'];
+    sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.classList.add('hidden');
+        }
+    });
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.classList.remove('hidden');
+    } else {
+        console.error('Element not found with ID:', sectionId);
+    }
 }
 
 function login() {
     const username = document.getElementById('login-username').value;
     const password = document.getElementById('login-password').value;
 
-    // Send login data to backend server using AJAX or fetch API
-    // Example using fetch API:
     fetch('/login', {
         method: 'POST',
         headers: {
@@ -22,9 +27,8 @@ function login() {
     })
     .then(response => {
         if (response.ok) {
-            // Login successful, do something (e.g., redirect to dashboard)
+            showSection('dashboard'); // Show dashboard section
         } else {
-            // Login failed, show error message
             alert('Login failed');
         }
     })
@@ -39,10 +43,11 @@ function signup() {
     const password = document.getElementById('signup-password').value;
     const confirmPassword = document.getElementById('signup-confirm-password').value;
 
-    // Perform validation (e.g., password matching)
+    if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+    }
 
-    // Send signup data to backend server using AJAX or fetch API
-    // Example using fetch API:
     fetch('/register', {
         method: 'POST',
         headers: {
@@ -52,13 +57,18 @@ function signup() {
     })
     .then(response => {
         if (response.ok) {
-            // Signup successful, do something (e.g., redirect to dashboard)
+            showSection('dashboard'); // Show dashboard section
         } else {
-            // Signup failed, show error message
             alert('Signup failed');
         }
     })
     .catch(error => {
         console.error('Error:', error);
     });
+}
+
+function logout() {
+    // Perform logout actions (if any)
+    // Redirect to the landing page
+    showSection('landing');
 }
